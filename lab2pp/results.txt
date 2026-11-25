@@ -1,0 +1,175 @@
+﻿# Протокол экспериментов (л/р №2, OpenMP)
+# Дата: 2026-11-25 12:34
+# Система: Windows-11-10.0.26300-SP0; логических процессоров: 16
+# Размеры: [200, 400, 800, 1200, 1600, 2000]
+# Число потоков: [1, 2, 4, 8, 16]
+# Замеров на точку: 5, прогревов: 1
+#----------------------------------------------------------------------
+$ python generate.py 200
+Generated 200x200 matrices
+$ matrix.exe  (л/р №1)
+0.006333
+0.007550
+0.006024
+0.006232
+0.006450
+$ .\build2\Release\matrix.exe --threads 1 --repeats 5 --warmup 1
+N=200 threads=1 repeats=5 warmup=1 time_sec=0.004365 time_min_sec=0.003977 operations=16000000 memory_bytes=960000 gflops=4.023 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 2 --repeats 5 --warmup 1
+N=200 threads=2 repeats=5 warmup=1 time_sec=0.002169 time_min_sec=0.001942 operations=16000000 memory_bytes=960000 gflops=8.240 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 4 --repeats 5 --warmup 1
+N=200 threads=4 repeats=5 warmup=1 time_sec=0.001119 time_min_sec=0.001097 operations=16000000 memory_bytes=960000 gflops=14.580 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 8 --repeats 5 --warmup 1
+N=200 threads=8 repeats=5 warmup=1 time_sec=0.001178 time_min_sec=0.000929 operations=16000000 memory_bytes=960000 gflops=17.214 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 16 --repeats 5 --warmup 1
+N=200 threads=16 repeats=5 warmup=1 time_sec=0.000859 time_min_sec=0.000769 operations=16000000 memory_bytes=960000 gflops=20.795 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 400
+Generated 400x400 matrices
+$ matrix.exe  (л/р №1)
+0.053796
+0.053412
+0.052924
+0.058957
+0.050775
+$ .\build2\Release\matrix.exe --threads 1 --repeats 5 --warmup 1
+N=400 threads=1 repeats=5 warmup=1 time_sec=0.034180 time_min_sec=0.033298 operations=128000000 memory_bytes=3840000 gflops=3.844 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 2 --repeats 5 --warmup 1
+N=400 threads=2 repeats=5 warmup=1 time_sec=0.020039 time_min_sec=0.019266 operations=128000000 memory_bytes=3840000 gflops=6.644 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 4 --repeats 5 --warmup 1
+N=400 threads=4 repeats=5 warmup=1 time_sec=0.011295 time_min_sec=0.010241 operations=128000000 memory_bytes=3840000 gflops=12.499 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 8 --repeats 5 --warmup 1
+N=400 threads=8 repeats=5 warmup=1 time_sec=0.008683 time_min_sec=0.006650 operations=128000000 memory_bytes=3840000 gflops=19.248 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 16 --repeats 5 --warmup 1
+N=400 threads=16 repeats=5 warmup=1 time_sec=0.006492 time_min_sec=0.004837 operations=128000000 memory_bytes=3840000 gflops=26.464 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 800
+Generated 800x800 matrices
+$ matrix.exe  (л/р №1)
+0.421818
+0.414536
+0.418638
+0.435671
+0.432589
+$ .\build2\Release\matrix.exe --threads 1 --repeats 5 --warmup 1
+N=800 threads=1 repeats=5 warmup=1 time_sec=0.244293 time_min_sec=0.236165 operations=1024000000 memory_bytes=15360000 gflops=4.336 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 2 --repeats 5 --warmup 1
+N=800 threads=2 repeats=5 warmup=1 time_sec=0.134125 time_min_sec=0.129712 operations=1024000000 memory_bytes=15360000 gflops=7.894 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 4 --repeats 5 --warmup 1
+N=800 threads=4 repeats=5 warmup=1 time_sec=0.078231 time_min_sec=0.076908 operations=1024000000 memory_bytes=15360000 gflops=13.315 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 8 --repeats 5 --warmup 1
+N=800 threads=8 repeats=5 warmup=1 time_sec=0.061640 time_min_sec=0.059969 operations=1024000000 memory_bytes=15360000 gflops=17.075 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 16 --repeats 5 --warmup 1
+N=800 threads=16 repeats=5 warmup=1 time_sec=0.040885 time_min_sec=0.037774 operations=1024000000 memory_bytes=15360000 gflops=27.109 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 1200
+Generated 1200x1200 matrices
+$ matrix.exe  (л/р №1)
+1.724305
+1.502119
+1.593515
+1.610534
+1.627492
+$ .\build2\Release\matrix.exe --threads 1 --repeats 5 --warmup 1
+N=1200 threads=1 repeats=5 warmup=1 time_sec=1.630539 time_min_sec=1.045822 operations=3456000000 memory_bytes=34560000 gflops=3.305 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 2 --repeats 5 --warmup 1
+N=1200 threads=2 repeats=5 warmup=1 time_sec=0.583917 time_min_sec=0.494118 operations=3456000000 memory_bytes=34560000 gflops=6.994 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 4 --repeats 5 --warmup 1
+N=1200 threads=4 repeats=5 warmup=1 time_sec=0.282951 time_min_sec=0.269562 operations=3456000000 memory_bytes=34560000 gflops=12.821 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 8 --repeats 5 --warmup 1
+N=1200 threads=8 repeats=5 warmup=1 time_sec=0.203832 time_min_sec=0.191165 operations=3456000000 memory_bytes=34560000 gflops=18.079 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 16 --repeats 5 --warmup 1
+N=1200 threads=16 repeats=5 warmup=1 time_sec=0.145462 time_min_sec=0.136522 operations=3456000000 memory_bytes=34560000 gflops=25.315 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 1600
+Generated 1600x1600 matrices
+$ matrix.exe  (л/р №1)
+5.384394
+5.293150
+5.039209
+5.093644
+5.008682
+$ .\build2\Release\matrix.exe --threads 1 --repeats 5 --warmup 1
+N=1600 threads=1 repeats=5 warmup=1 time_sec=4.693407 time_min_sec=4.279587 operations=8192000000 memory_bytes=61440000 gflops=1.914 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 2 --repeats 5 --warmup 1
+N=1600 threads=2 repeats=5 warmup=1 time_sec=2.217557 time_min_sec=2.143365 operations=8192000000 memory_bytes=61440000 gflops=3.822 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 4 --repeats 5 --warmup 1
+N=1600 threads=4 repeats=5 warmup=1 time_sec=1.048315 time_min_sec=0.794062 operations=8192000000 memory_bytes=61440000 gflops=10.317 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 8 --repeats 5 --warmup 1
+N=1600 threads=8 repeats=5 warmup=1 time_sec=0.614037 time_min_sec=0.526865 operations=8192000000 memory_bytes=61440000 gflops=15.549 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 16 --repeats 5 --warmup 1
+N=1600 threads=16 repeats=5 warmup=1 time_sec=0.428616 time_min_sec=0.364506 operations=8192000000 memory_bytes=61440000 gflops=22.474 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 2000
+Generated 2000x2000 matrices
+$ matrix.exe  (л/р №1)
+11.601864
+12.612755
+11.942366
+11.911053
+11.810382
+$ .\build2\Release\matrix.exe --threads 1 --repeats 5 --warmup 1
+N=2000 threads=1 repeats=5 warmup=1 time_sec=8.980613 time_min_sec=8.615640 operations=16000000000 memory_bytes=96000000 gflops=1.857 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 2 --repeats 5 --warmup 1
+N=2000 threads=2 repeats=5 warmup=1 time_sec=4.202229 time_min_sec=4.106930 operations=16000000000 memory_bytes=96000000 gflops=3.896 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 4 --repeats 5 --warmup 1
+N=2000 threads=4 repeats=5 warmup=1 time_sec=2.344671 time_min_sec=2.301874 operations=16000000000 memory_bytes=96000000 gflops=6.951 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 8 --repeats 5 --warmup 1
+N=2000 threads=8 repeats=5 warmup=1 time_sec=1.470818 time_min_sec=1.351838 operations=16000000000 memory_bytes=96000000 gflops=11.836 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\build2\Release\matrix.exe --threads 16 --repeats 5 --warmup 1
+N=2000 threads=16 repeats=5 warmup=1 time_sec=1.436824 time_min_sec=0.796716 operations=16000000000 memory_bytes=96000000 gflops=20.082 omp_procs=16
+$ python check.py
+PASS: NumPy verification succeeded
