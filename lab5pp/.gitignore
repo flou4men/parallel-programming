@@ -1,0 +1,20 @@
+# исполняемые файлы и объектники
+*.exe
+*.obj
+*.o
+mandelbrot
+
+# каталоги сборки
+build/
+cmake-build-*/
+
+# результаты измерений и картинки (создаются скриптами)
+*.ppm
+counts_view*.bin
+counts.bin
+
+# служебные каталоги Python
+__pycache__/
+.venv/
+
+# benchmark.csv, results.txt и PNG-графики хранятся в репозитории
