@@ -1,0 +1,22 @@
+#!/bin/bash
+# Задание PBS для кластера «Сергей Королёв» (Самарский университет).
+# Запуск: qsub lab3.pbs     Проверка: qstat -a     Результат: lab3_matrix_mpi.o<номер>
+#PBS -N lab3_matrix_mpi
+#PBS -l walltime=00:40:00
+#PBS -l nodes=4:ppn=8
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+export PATH=$PBS_O_PATH
+
+# MPI-окружение кластера (Intel MPI, см. hpc.ssau.ru/node/22)
+module load impi/4
+export I_MPI_DEVICE=rdma
+export I_MPI_DEBUG=0
+export I_MPI_FALLBACK_DEVICE=disable
+
+# Сборка (на всякий случай прямо на узле — компилятор есть в impi)
+mpicxx -O2 -o matrix_mpi main_mpi.cpp || exit 1
+
+# Полная серия экспериментов: размеры 200..2000, число процессов 1..32
+bash run_experiments.sh
