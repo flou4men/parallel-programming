@@ -1,0 +1,163 @@
+﻿# Протокол экспериментов (л/р №4, CUDA)
+# Дата: 2026-11-25 13:49
+# Система: Windows-11-10.0.26300-SP0
+# Размеры: [200, 400, 800, 1200, 1600, 2000]
+# Конфигурации (ядро, блок): [('tiled', 8), ('tiled', 16), ('tiled', 32), ('naive', 16), ('naive', 32)]
+# Замеров на точку: 5, прогревов: 1
+#----------------------------------------------------------------------
+$ python generate.py 200
+Generated 200x200 matrices
+$ matrix.exe  (л/р №1, последовательно)
+0.016724
+0.009414
+0.005738
+$ .\matrix_cuda.exe --kernel tiled --block 8 --repeats 5 --warmup 1
+N=200 kernel=tiled block=8x8 grid=25x25 repeats=5 warmup=1 time_sec=0.000110 time_min_sec=0.000103 h2d_sec=0.000177 d2h_sec=0.000113 operations=16000000 memory_bytes=960000 gflops=154.703 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 16 --repeats 5 --warmup 1
+N=200 kernel=tiled block=16x16 grid=13x13 repeats=5 warmup=1 time_sec=0.000117 time_min_sec=0.000117 h2d_sec=0.000128 d2h_sec=0.000073 operations=16000000 memory_bytes=960000 gflops=137.099 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 32 --repeats 5 --warmup 1
+N=200 kernel=tiled block=32x32 grid=7x7 repeats=5 warmup=1 time_sec=0.000168 time_min_sec=0.000167 h2d_sec=0.000123 d2h_sec=0.000073 operations=16000000 memory_bytes=960000 gflops=95.932 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 16 --repeats 5 --warmup 1
+N=200 kernel=naive block=16x16 grid=13x13 repeats=5 warmup=1 time_sec=0.000107 time_min_sec=0.000106 h2d_sec=0.000122 d2h_sec=0.000079 operations=16000000 memory_bytes=960000 gflops=150.240 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 32 --repeats 5 --warmup 1
+N=200 kernel=naive block=32x32 grid=7x7 repeats=5 warmup=1 time_sec=0.000148 time_min_sec=0.000146 h2d_sec=0.000131 d2h_sec=0.000075 operations=16000000 memory_bytes=960000 gflops=109.266 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 400
+Generated 400x400 matrices
+$ matrix.exe  (л/р №1, последовательно)
+0.071093
+0.071167
+0.046887
+$ .\matrix_cuda.exe --kernel tiled --block 8 --repeats 5 --warmup 1
+N=400 kernel=tiled block=8x8 grid=50x50 repeats=5 warmup=1 time_sec=0.000776 time_min_sec=0.000771 h2d_sec=0.000395 d2h_sec=0.000230 operations=128000000 memory_bytes=3840000 gflops=166.003 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 16 --repeats 5 --warmup 1
+N=400 kernel=tiled block=16x16 grid=25x25 repeats=5 warmup=1 time_sec=0.000764 time_min_sec=0.000762 h2d_sec=0.000442 d2h_sec=0.000239 operations=128000000 memory_bytes=3840000 gflops=167.870 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 32 --repeats 5 --warmup 1
+N=400 kernel=tiled block=32x32 grid=13x13 repeats=5 warmup=1 time_sec=0.000906 time_min_sec=0.000905 h2d_sec=0.000393 d2h_sec=0.000246 operations=128000000 memory_bytes=3840000 gflops=141.403 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 16 --repeats 5 --warmup 1
+N=400 kernel=naive block=16x16 grid=25x25 repeats=5 warmup=1 time_sec=0.000765 time_min_sec=0.000762 h2d_sec=0.000426 d2h_sec=0.000245 operations=128000000 memory_bytes=3840000 gflops=168.011 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 32 --repeats 5 --warmup 1
+N=400 kernel=naive block=32x32 grid=13x13 repeats=5 warmup=1 time_sec=0.000866 time_min_sec=0.000821 h2d_sec=0.000874 d2h_sec=0.000278 operations=128000000 memory_bytes=3840000 gflops=155.860 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 800
+Generated 800x800 matrices
+$ matrix.exe  (л/р №1, последовательно)
+0.507351
+0.470461
+0.405235
+$ .\matrix_cuda.exe --kernel tiled --block 8 --repeats 5 --warmup 1
+N=800 kernel=tiled block=8x8 grid=100x100 repeats=5 warmup=1 time_sec=0.006200 time_min_sec=0.006079 h2d_sec=0.001170 d2h_sec=0.000699 operations=1024000000 memory_bytes=15360000 gflops=168.435 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 16 --repeats 5 --warmup 1
+N=800 kernel=tiled block=16x16 grid=50x50 repeats=5 warmup=1 time_sec=0.005987 time_min_sec=0.005906 h2d_sec=0.001450 d2h_sec=0.000864 operations=1024000000 memory_bytes=15360000 gflops=173.370 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 32 --repeats 5 --warmup 1
+N=800 kernel=tiled block=32x32 grid=25x25 repeats=5 warmup=1 time_sec=0.006280 time_min_sec=0.006143 h2d_sec=0.001265 d2h_sec=0.000797 operations=1024000000 memory_bytes=15360000 gflops=166.694 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 16 --repeats 5 --warmup 1
+N=800 kernel=naive block=16x16 grid=50x50 repeats=5 warmup=1 time_sec=0.006023 time_min_sec=0.005963 h2d_sec=0.001474 d2h_sec=0.000880 operations=1024000000 memory_bytes=15360000 gflops=171.733 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 32 --repeats 5 --warmup 1
+N=800 kernel=naive block=32x32 grid=25x25 repeats=5 warmup=1 time_sec=0.006139 time_min_sec=0.006027 h2d_sec=0.001423 d2h_sec=0.000735 operations=1024000000 memory_bytes=15360000 gflops=169.896 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 1200
+Generated 1200x1200 matrices
+$ matrix.exe  (л/р №1, последовательно)
+1.617227
+2.086064
+1.471771
+$ .\matrix_cuda.exe --kernel tiled --block 8 --repeats 5 --warmup 1
+N=1200 kernel=tiled block=8x8 grid=150x150 repeats=5 warmup=1 time_sec=0.020748 time_min_sec=0.020348 h2d_sec=0.002573 d2h_sec=0.001530 operations=3456000000 memory_bytes=34560000 gflops=169.846 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 16 --repeats 5 --warmup 1
+N=1200 kernel=tiled block=16x16 grid=75x75 repeats=5 warmup=1 time_sec=0.020323 time_min_sec=0.019974 h2d_sec=0.002854 d2h_sec=0.001507 operations=3456000000 memory_bytes=34560000 gflops=173.024 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 32 --repeats 5 --warmup 1
+N=1200 kernel=tiled block=32x32 grid=38x38 repeats=5 warmup=1 time_sec=0.021337 time_min_sec=0.020518 h2d_sec=0.002711 d2h_sec=0.001496 operations=3456000000 memory_bytes=34560000 gflops=168.438 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 16 --repeats 5 --warmup 1
+N=1200 kernel=naive block=16x16 grid=75x75 repeats=5 warmup=1 time_sec=0.020427 time_min_sec=0.020091 h2d_sec=0.002720 d2h_sec=0.001562 operations=3456000000 memory_bytes=34560000 gflops=172.018 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 32 --repeats 5 --warmup 1
+N=1200 kernel=naive block=32x32 grid=38x38 repeats=5 warmup=1 time_sec=0.020793 time_min_sec=0.020376 h2d_sec=0.002464 d2h_sec=0.001768 operations=3456000000 memory_bytes=34560000 gflops=169.608 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 1600
+Generated 1600x1600 matrices
+$ matrix.exe  (л/р №1, последовательно)
+5.819322
+5.258869
+5.296767
+$ .\matrix_cuda.exe --kernel tiled --block 8 --repeats 5 --warmup 1
+N=1600 kernel=tiled block=8x8 grid=200x200 repeats=5 warmup=1 time_sec=0.047040 time_min_sec=0.042105 h2d_sec=0.005339 d2h_sec=0.003794 operations=8192000000 memory_bytes=61440000 gflops=194.562 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 16 --repeats 5 --warmup 1
+N=1600 kernel=tiled block=16x16 grid=100x100 repeats=5 warmup=1 time_sec=0.042994 time_min_sec=0.041133 h2d_sec=0.003912 d2h_sec=0.002664 operations=8192000000 memory_bytes=61440000 gflops=199.159 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 32 --repeats 5 --warmup 1
+N=1600 kernel=tiled block=32x32 grid=50x50 repeats=5 warmup=1 time_sec=0.047308 time_min_sec=0.041924 h2d_sec=0.004895 d2h_sec=0.002333 operations=8192000000 memory_bytes=61440000 gflops=195.400 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 16 --repeats 5 --warmup 1
+N=1600 kernel=naive block=16x16 grid=100x100 repeats=5 warmup=1 time_sec=0.043476 time_min_sec=0.041263 h2d_sec=0.004912 d2h_sec=0.002252 operations=8192000000 memory_bytes=61440000 gflops=198.531 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 32 --repeats 5 --warmup 1
+N=1600 kernel=naive block=32x32 grid=50x50 repeats=5 warmup=1 time_sec=0.046707 time_min_sec=0.041260 h2d_sec=0.006135 d2h_sec=0.002480 operations=8192000000 memory_bytes=61440000 gflops=198.547 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ python generate.py 2000
+Generated 2000x2000 matrices
+$ matrix.exe  (л/р №1, последовательно)
+12.589201
+12.645627
+11.108715
+$ .\matrix_cuda.exe --kernel tiled --block 8 --repeats 5 --warmup 1
+N=2000 kernel=tiled block=8x8 grid=250x250 repeats=5 warmup=1 time_sec=0.086642 time_min_sec=0.082408 h2d_sec=0.006301 d2h_sec=0.004291 operations=16000000000 memory_bytes=96000000 gflops=194.155 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 16 --repeats 5 --warmup 1
+N=2000 kernel=tiled block=16x16 grid=125x125 repeats=5 warmup=1 time_sec=0.084592 time_min_sec=0.080478 h2d_sec=0.006673 d2h_sec=0.005058 operations=16000000000 memory_bytes=96000000 gflops=198.812 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel tiled --block 32 --repeats 5 --warmup 1
+N=2000 kernel=tiled block=32x32 grid=63x63 repeats=5 warmup=1 time_sec=0.091596 time_min_sec=0.089720 h2d_sec=0.008053 d2h_sec=0.006492 operations=16000000000 memory_bytes=96000000 gflops=178.333 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 16 --repeats 5 --warmup 1
+N=2000 kernel=naive block=16x16 grid=125x125 repeats=5 warmup=1 time_sec=0.087837 time_min_sec=0.080899 h2d_sec=0.006582 d2h_sec=0.004326 operations=16000000000 memory_bytes=96000000 gflops=197.777 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
+$ .\matrix_cuda.exe --kernel naive --block 32 --repeats 5 --warmup 1
+N=2000 kernel=naive block=32x32 grid=63x63 repeats=5 warmup=1 time_sec=0.094230 time_min_sec=0.087908 h2d_sec=0.007389 d2h_sec=0.003735 operations=16000000000 memory_bytes=96000000 gflops=182.008 device="NVIDIA GeForce RTX 4050 Laptop GPU" sm=89
+$ python check.py
+PASS: NumPy verification succeeded
