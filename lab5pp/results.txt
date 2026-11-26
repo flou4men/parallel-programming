@@ -1,0 +1,106 @@
+$ mandelbrot.exe --view 1 --mode serial --threads 1 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=serial threads=1 repeats=5 time_sec=0.288677 time_min_sec=0.288677 work_iters=133211946 mpix_per_sec=6.651 time_per_pixel_ns=150.352 thread_times="0.2887" thread_iters="133211946"
+$ mandelbrot.exe --view 1 --mode serial --threads 1 --width 1600 --height 1200 --max-iter 256 --repeats 1 --counts counts_view1.bin
+view=1 width=1600 height=1200 max_iter=256 mode=serial threads=1 repeats=1 time_sec=0.294364 time_min_sec=0.294364 work_iters=133211946 mpix_per_sec=6.523 time_per_pixel_ns=153.315 thread_times="0.2944" thread_iters="133211946"
+$ python check.py (view 1)
+pixels=1920000 mismatched=0 (0.0000 %) max_diff=0
+PASS: NumPy verification succeeded
+$ mandelbrot.exe --view 1 --mode block --threads 1 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=block threads=1 repeats=5 time_sec=0.286668 time_min_sec=0.286668 work_iters=133211946 mpix_per_sec=6.698 time_per_pixel_ns=149.306 thread_times="0.2864" thread_iters="133211946"
+$ mandelbrot.exe --view 1 --mode block --threads 2 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=block threads=2 repeats=5 time_sec=0.141963 time_min_sec=0.141963 work_iters=133211946 mpix_per_sec=13.525 time_per_pixel_ns=73.939 thread_times="0.1409,0.1417" thread_iters="66452883,66759063"
+$ mandelbrot.exe --view 1 --mode block --threads 3 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=block threads=3 repeats=5 time_sec=0.184623 time_min_sec=0.184623 work_iters=133211946 mpix_per_sec=10.400 time_per_pixel_ns=96.158 thread_times="0.0578,0.1843,0.0576" thread_iters="26252661,80554923,26404362"
+$ mandelbrot.exe --view 1 --mode block --threads 4 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=block threads=4 repeats=5 time_sec=0.115022 time_min_sec=0.115022 work_iters=133211946 mpix_per_sec=16.692 time_per_pixel_ns=59.907 thread_times="0.0267,0.1136,0.1145,0.0274" thread_iters="12654686,53798197,53986989,12772074"
+$ mandelbrot.exe --view 1 --mode block --threads 6 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=block threads=6 repeats=5 time_sec=0.087437 time_min_sec=0.087437 work_iters=133211946 mpix_per_sec=21.959 time_per_pixel_ns=45.540 thread_times="0.0074,0.0505,0.0862,0.0868,0.0534,0.0074" thread_iters="3673804,22578857,40200222,40354701,22708288,3696074"
+$ mandelbrot.exe --view 1 --mode block --threads 8 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=block threads=8 repeats=5 time_sec=0.072888 time_min_sec=0.072888 work_iters=133211946 mpix_per_sec=26.342 time_per_pixel_ns=37.963 thread_times="0.0046,0.0230,0.0531,0.0708,0.0724,0.0522,0.0312,0.0069" thread_iters="2129834,10524852,21526089,32272108,32400418,21586571,10611824,2160250"
+$ mandelbrot.exe --view 1 --mode block --threads 12 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=block threads=12 repeats=5 time_sec=0.055574 time_min_sec=0.055574 work_iters=133211946 mpix_per_sec=34.549 time_per_pixel_ns=28.945 thread_times="0.0014,0.0063,0.0295,0.0325,0.0403,0.0551,0.0549,0.0509,0.0441,0.0202,0.0099,0.0023" thread_iters="685476,2988328,8980882,13597975,17881488,22318734,22417131,17937570,13632288,9076000,2996916,699158"
+$ mandelbrot.exe --view 1 --mode block --threads 16 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=block threads=16 repeats=5 time_sec=0.047111 time_min_sec=0.047111 work_iters=133211946 mpix_per_sec=40.755 time_per_pixel_ns=24.537 thread_times="0.0006,0.0058,0.0070,0.0247,0.0253,0.0299,0.0462,0.0462,0.0417,0.0446,0.0350,0.0311,0.0253,0.0072,0.0072,0.0006" thread_iters="377495,1752339,2625210,7899642,9846804,11679285,15340695,16931413,17024155,15376263,11719402,9867169,7951339,2660485,1775539,384711"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 1 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=interleaved threads=1 repeats=5 time_sec=0.336888 time_min_sec=0.336888 work_iters=133211946 mpix_per_sec=5.699 time_per_pixel_ns=175.463 thread_times="0.3367" thread_iters="133211946"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 2 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=interleaved threads=2 repeats=5 time_sec=0.143874 time_min_sec=0.143874 work_iters=133211946 mpix_per_sec=13.345 time_per_pixel_ns=74.934 thread_times="0.1435,0.1437" thread_iters="66636705,66575241"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 3 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=interleaved threads=3 repeats=5 time_sec=0.099217 time_min_sec=0.099217 work_iters=133211946 mpix_per_sec=19.351 time_per_pixel_ns=51.676 thread_times="0.0979,0.0990,0.0982" thread_iters="44459477,44376608,44375861"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 4 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=interleaved threads=4 repeats=5 time_sec=0.076627 time_min_sec=0.076627 work_iters=133211946 mpix_per_sec=25.056 time_per_pixel_ns=39.910 thread_times="0.0758,0.0764,0.0748,0.0763" thread_iters="33338703,33287756,33298002,33287485"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 6 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=interleaved threads=6 repeats=5 time_sec=0.059987 time_min_sec=0.059987 work_iters=133211946 mpix_per_sec=32.007 time_per_pixel_ns=31.243 thread_times="0.0564,0.0594,0.0597,0.0575,0.0569,0.0511" thread_iters="22261982,22189294,22187409,22197495,22187314,22188452"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 8 --width 1600 --height 1200 --max-iter 256 --repeats 5 --verify
+view=1 width=1600 height=1200 max_iter=256 mode=interleaved threads=8 repeats=5 time_sec=0.051807 time_min_sec=0.051807 work_iters=133211946 mpix_per_sec=37.061 time_per_pixel_ns=26.983 thread_times="0.0397,0.0390,0.0500,0.0483,0.0477,0.0409,0.0513,0.0414" thread_iters="16702186,16637657,16649982,16649963,16636517,16650099,16648020,16637522" verify=PASS mismatched_pixels=0 max_diff=0
+$ mandelbrot.exe --view 1 --mode interleaved --threads 12 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=interleaved threads=12 repeats=5 time_sec=0.035515 time_min_sec=0.035515 work_iters=133211946 mpix_per_sec=54.061 time_per_pixel_ns=18.498 thread_times="0.0274,0.0304,0.0348,0.0352,0.0323,0.0294,0.0313,0.0267,0.0310,0.0279,0.0307,0.0342" thread_iters="11151392,11095955,11093475,11099070,11093377,11093376,11110590,11093339,11093934,11098425,11093937,11095076"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 16 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=interleaved threads=16 repeats=5 time_sec=0.030242 time_min_sec=0.030242 work_iters=133211946 mpix_per_sec=63.489 time_per_pixel_ns=15.751 thread_times="0.0301,0.0241,0.0241,0.0253,0.0294,0.0286,0.0297,0.0234,0.0296,0.0282,0.0233,0.0296,0.0287,0.0237,0.0233,0.0248" thread_iters="8299872,8304313,8320982,8320731,8318426,8329093,8327886,8333602,8402314,8333344,8329000,8329232,8318091,8321006,8320134,8303920"
+$ mandelbrot.exe --view 1 --mode dynamic --threads 8 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=dynamic threads=8 repeats=5 time_sec=0.047251 time_min_sec=0.047251 work_iters=133211946 mpix_per_sec=40.634 time_per_pixel_ns=24.610 thread_times="0.0469,0.0469,0.0468,0.0468,0.0467,0.0467,0.0466,0.0466" thread_iters="18857349,19498682,18612412,17863671,15941442,13664062,15104672,13669656"
+$ mandelbrot.exe --view 1 --mode dynamic --threads 16 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=dynamic threads=16 repeats=5 time_sec=0.029449 time_min_sec=0.029449 work_iters=133211946 mpix_per_sec=65.198 time_per_pixel_ns=15.338 thread_times="0.0290,0.0290,0.0286,0.0283,0.0288,0.0289,0.0287,0.0286,0.0288,0.0288,0.0285,0.0285,0.0284,0.0284,0.0283,0.0282" thread_iters="9337965,6785588,7394942,9461044,9103939,9705538,7767928,7742721,7814094,7803480,7066781,7428831,9498893,8547553,9003663,8748986"
+$ mandelbrot.exe --view 2 --mode serial --threads 1 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=serial threads=1 repeats=5 time_sec=0.155421 time_min_sec=0.155421 work_iters=76757072 mpix_per_sec=12.354 time_per_pixel_ns=80.949 thread_times="0.1554" thread_iters="76757072"
+$ mandelbrot.exe --view 2 --mode serial --threads 1 --width 1600 --height 1200 --max-iter 256 --repeats 1 --counts counts_view2.bin
+view=2 width=1600 height=1200 max_iter=256 mode=serial threads=1 repeats=1 time_sec=0.158698 time_min_sec=0.158698 work_iters=76757072 mpix_per_sec=12.098 time_per_pixel_ns=82.655 thread_times="0.1587" thread_iters="76757072"
+$ python check.py (view 2)
+pixels=1920000 mismatched=0 (0.0000 %) max_diff=0
+PASS: NumPy verification succeeded
+$ mandelbrot.exe --view 2 --mode block --threads 1 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=block threads=1 repeats=5 time_sec=0.158853 time_min_sec=0.158853 work_iters=76757072 mpix_per_sec=12.087 time_per_pixel_ns=82.736 thread_times="0.1587" thread_iters="76757072"
+$ mandelbrot.exe --view 2 --mode block --threads 2 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=block threads=2 repeats=5 time_sec=0.092892 time_min_sec=0.092892 work_iters=76757072 mpix_per_sec=20.669 time_per_pixel_ns=48.381 thread_times="0.0927,0.0635" thread_iters="45152535,31604537"
+$ mandelbrot.exe --view 2 --mode block --threads 3 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=block threads=3 repeats=5 time_sec=0.072619 time_min_sec=0.072619 work_iters=76757072 mpix_per_sec=26.440 time_per_pixel_ns=37.822 thread_times="0.0723,0.0455,0.0433" thread_iters="34386239,21955165,20415668"
+$ mandelbrot.exe --view 2 --mode block --threads 4 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=block threads=4 repeats=5 time_sec=0.062550 time_min_sec=0.062550 work_iters=76757072 mpix_per_sec=30.696 time_per_pixel_ns=32.578 thread_times="0.0622,0.0356,0.0346,0.0316" thread_iters="28873595,16278940,16098880,15505657"
+$ mandelbrot.exe --view 2 --mode block --threads 6 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=block threads=6 repeats=5 time_sec=0.048233 time_min_sec=0.048233 work_iters=76757072 mpix_per_sec=39.807 time_per_pixel_ns=25.121 thread_times="0.0480,0.0285,0.0215,0.0282,0.0211,0.0276" thread_iters="22100532,12285707,10766296,11188869,10480223,9935445"
+$ mandelbrot.exe --view 2 --mode block --threads 8 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=block threads=8 repeats=5 time_sec=0.039176 time_min_sec=0.039176 work_iters=76757072 mpix_per_sec=49.010 time_per_pixel_ns=20.404 thread_times="0.0390,0.0313,0.0252,0.0188,0.0211,0.0239,0.0233,0.0182" thread_iters="17717135,11156460,7889294,8389646,8521368,7577512,8656562,6849095"
+$ mandelbrot.exe --view 2 --mode block --threads 12 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=block threads=12 repeats=5 time_sec=0.027579 time_min_sec=0.027579 work_iters=76757072 mpix_per_sec=69.617 time_per_pixel_ns=14.364 thread_times="0.0273,0.0237,0.0153,0.0137,0.0155,0.0186,0.0182,0.0154,0.0106,0.0176,0.0144,0.0131" thread_iters="12780657,9319875,6773063,5512644,4735238,6031058,5801879,5386990,4910011,5570212,6023530,3911915"
+$ mandelbrot.exe --view 2 --mode block --threads 16 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=block threads=16 repeats=5 time_sec=0.024896 time_min_sec=0.024896 work_iters=76757072 mpix_per_sec=77.120 time_per_pixel_ns=12.967 thread_times="0.0247,0.0204,0.0170,0.0137,0.0156,0.0130,0.0130,0.0165,0.0162,0.0152,0.0147,0.0102,0.0114,0.0135,0.0133,0.0099" thread_iters="10001290,7715845,6342491,4813969,4221505,3667789,3640065,4749581,4425712,4095656,3927421,3650091,3975365,4681197,3978264,2870831"
+$ mandelbrot.exe --view 2 --mode interleaved --threads 1 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=interleaved threads=1 repeats=5 time_sec=0.155945 time_min_sec=0.155945 work_iters=76757072 mpix_per_sec=12.312 time_per_pixel_ns=81.221 thread_times="0.1552" thread_iters="76757072"
+$ mandelbrot.exe --view 2 --mode interleaved --threads 2 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=interleaved threads=2 repeats=5 time_sec=0.078754 time_min_sec=0.078754 work_iters=76757072 mpix_per_sec=24.380 time_per_pixel_ns=41.017 thread_times="0.0786,0.0785" thread_iters="38405718,38351354"
+$ mandelbrot.exe --view 2 --mode interleaved --threads 3 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=interleaved threads=3 repeats=5 time_sec=0.053789 time_min_sec=0.053789 work_iters=76757072 mpix_per_sec=35.695 time_per_pixel_ns=28.015 thread_times="0.0534,0.0535,0.0529" thread_iters="25617713,25588466,25550893"
+$ mandelbrot.exe --view 2 --mode interleaved --threads 4 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=interleaved threads=4 repeats=5 time_sec=0.041857 time_min_sec=0.041857 work_iters=76757072 mpix_per_sec=45.870 time_per_pixel_ns=21.801 thread_times="0.0412,0.0408,0.0411,0.0414" thread_iters="19235514,19193765,19170204,19157589"
+$ mandelbrot.exe --view 2 --mode interleaved --threads 6 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=interleaved threads=6 repeats=5 time_sec=0.035047 time_min_sec=0.035047 work_iters=76757072 mpix_per_sec=54.784 time_per_pixel_ns=18.254 thread_times="0.0319,0.0322,0.0286,0.0287,0.0345,0.0286" thread_iters="12839031,12818791,12797012,12778682,12769675,12753881"
+$ mandelbrot.exe --view 2 --mode interleaved --threads 8 --width 1600 --height 1200 --max-iter 256 --repeats 5 --verify
+view=2 width=1600 height=1200 max_iter=256 mode=interleaved threads=8 repeats=5 time_sec=0.029185 time_min_sec=0.029185 work_iters=76757072 mpix_per_sec=65.787 time_per_pixel_ns=15.201 thread_times="0.0236,0.0208,0.0248,0.0213,0.0288,0.0258,0.0278,0.0273" thread_iters="9642483,9623775,9614152,9606152,9593031,9569990,9556052,9551437" verify=PASS mismatched_pixels=0 max_diff=0
+$ mandelbrot.exe --view 2 --mode interleaved --threads 12 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=interleaved threads=12 repeats=5 time_sec=0.021181 time_min_sec=0.021181 work_iters=76757072 mpix_per_sec=90.646 time_per_pixel_ns=11.032 thread_times="0.0130,0.0194,0.0184,0.0194,0.0203,0.0146,0.0160,0.0138,0.0160,0.0162,0.0190,0.0162" thread_iters="6445418,6427922,6411158,6410849,6404242,6398010,6393613,6390869,6385854,6367833,6365433,6355871"
+$ mandelbrot.exe --view 2 --mode interleaved --threads 16 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=interleaved threads=16 repeats=5 time_sec=0.017578 time_min_sec=0.017578 work_iters=76757072 mpix_per_sec=109.227 time_per_pixel_ns=9.155 thread_times="0.0163,0.0131,0.0161,0.0129,0.0161,0.0136,0.0168,0.0168,0.0168,0.0168,0.0160,0.0132,0.0129,0.0129,0.0129,0.0128" thread_iters="4841326,4829942,4826831,4825621,4818409,4805896,4803381,4803769,4801157,4793833,4787321,4780531,4774622,4764094,4752671,4747668"
+$ mandelbrot.exe --view 2 --mode dynamic --threads 8 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=dynamic threads=8 repeats=5 time_sec=0.027622 time_min_sec=0.027622 work_iters=76757072 mpix_per_sec=69.509 time_per_pixel_ns=14.387 thread_times="0.0273,0.0272,0.0274,0.0271,0.0272,0.0273,0.0273,0.0271" thread_iters="10996885,8058262,9371847,7797497,10700012,10956170,8920826,9955573"
+$ mandelbrot.exe --view 2 --mode dynamic --threads 16 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=2 width=1600 height=1200 max_iter=256 mode=dynamic threads=16 repeats=5 time_sec=0.017557 time_min_sec=0.017557 work_iters=76757072 mpix_per_sec=109.358 time_per_pixel_ns=9.144 thread_times="0.0171,0.0169,0.0170,0.0170,0.0162,0.0170,0.0168,0.0167,0.0166,0.0165,0.0165,0.0162,0.0163,0.0162,0.0161,0.0169" thread_iters="5073772,4500434,5455636,5247064,4157017,4552747,4484764,4302478,5413775,4321203,5296854,4791818,4319896,5191358,5155755,4492501"
+$ mandelbrot.exe --view 1 --mode serial --threads 1 --width 400 --height 300 --max-iter 256 --repeats 2
+view=1 width=400 height=300 max_iter=256 mode=serial threads=1 repeats=2 time_sec=0.017187 time_min_sec=0.017187 work_iters=8333171 mpix_per_sec=6.982 time_per_pixel_ns=143.228 thread_times="0.0172" thread_iters="8333171"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 8 --width 400 --height 300 --max-iter 256 --repeats 5
+view=1 width=400 height=300 max_iter=256 mode=interleaved threads=8 repeats=5 time_sec=0.004701 time_min_sec=0.004701 work_iters=8333171 mpix_per_sec=25.529 time_per_pixel_ns=39.172 thread_times="0.0023,0.0022,0.0022,0.0023,0.0029,0.0025,0.0026,0.0022" thread_iters="1037187,1040196,1040608,1040034,1035976,1039219,1060576,1039375"
+$ mandelbrot.exe --view 1 --mode serial --threads 1 --width 800 --height 600 --max-iter 256 --repeats 2
+view=1 width=800 height=600 max_iter=256 mode=serial threads=1 repeats=2 time_sec=0.071106 time_min_sec=0.071106 work_iters=33328327 mpix_per_sec=6.750 time_per_pixel_ns=148.138 thread_times="0.0711" thread_iters="33328327"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 8 --width 800 --height 600 --max-iter 256 --repeats 5
+view=1 width=800 height=600 max_iter=256 mode=interleaved threads=8 repeats=5 time_sec=0.013943 time_min_sec=0.013943 work_iters=33328327 mpix_per_sec=34.427 time_per_pixel_ns=29.047 thread_times="0.0128,0.0118,0.0122,0.0116,0.0101,0.0108,0.0133,0.0097" thread_iters="4152989,4160961,4160366,4165287,4202144,4165641,4160302,4160637"
+$ mandelbrot.exe --view 1 --mode serial --threads 1 --width 1200 --height 900 --max-iter 256 --repeats 2
+view=1 width=1200 height=900 max_iter=256 mode=serial threads=1 repeats=2 time_sec=0.187013 time_min_sec=0.187013 work_iters=74946754 mpix_per_sec=5.775 time_per_pixel_ns=173.160 thread_times="0.1870" thread_iters="74946754"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 8 --width 1200 --height 900 --max-iter 256 --repeats 5
+view=1 width=1200 height=900 max_iter=256 mode=interleaved threads=8 repeats=5 time_sec=0.027968 time_min_sec=0.027968 work_iters=74946754 mpix_per_sec=38.615 time_per_pixel_ns=25.896 thread_times="0.0199,0.0252,0.0267,0.0221,0.0201,0.0227,0.0272,0.0243" thread_iters="9361190,9366674,9424833,9366617,9358123,9356255,9356934,9356128"
+$ mandelbrot.exe --view 1 --mode serial --threads 1 --width 1600 --height 1200 --max-iter 256 --repeats 2
+view=1 width=1600 height=1200 max_iter=256 mode=serial threads=1 repeats=2 time_sec=0.498573 time_min_sec=0.498573 work_iters=133211946 mpix_per_sec=3.851 time_per_pixel_ns=259.673 thread_times="0.4986" thread_iters="133211946"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 8 --width 1600 --height 1200 --max-iter 256 --repeats 5
+view=1 width=1600 height=1200 max_iter=256 mode=interleaved threads=8 repeats=5 time_sec=0.048540 time_min_sec=0.048540 work_iters=133211946 mpix_per_sec=39.555 time_per_pixel_ns=25.281 thread_times="0.0461,0.0406,0.0478,0.0425,0.0455,0.0369,0.0388,0.0449" thread_iters="16702186,16637657,16649982,16649963,16636517,16650099,16648020,16637522"
+$ mandelbrot.exe --view 1 --mode serial --threads 1 --width 2400 --height 1800 --max-iter 256 --repeats 2
+view=1 width=2400 height=1800 max_iter=256 mode=serial threads=1 repeats=2 time_sec=1.020276 time_min_sec=1.020276 work_iters=299706348 mpix_per_sec=4.234 time_per_pixel_ns=236.175 thread_times="1.0203" thread_iters="299706348"
+$ mandelbrot.exe --view 1 --mode interleaved --threads 8 --width 2400 --height 1800 --max-iter 256 --repeats 5
+view=1 width=2400 height=1800 max_iter=256 mode=interleaved threads=8 repeats=5 time_sec=0.106138 time_min_sec=0.106138 work_iters=299706348 mpix_per_sec=40.702 time_per_pixel_ns=24.569 thread_times="0.0993,0.1046,0.0940,0.0951,0.0894,0.1055,0.1008,0.0828" thread_iters="37437668,37438876,37446149,37466348,37564665,37466359,37447824,37438459"
