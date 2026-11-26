@@ -1,0 +1,24 @@
+# исполняемые файлы и объектники
+*.exe
+*.obj
+*.o
+*.pdb
+*.exp
+*.lib
+
+# каталоги сборки
+build/
+build*/
+cmake-build-*/
+
+# исходные данные и результат умножения (создаются скриптами)
+A.txt
+B.txt
+result.txt
+
+# служебные каталоги Python
+__pycache__/
+.venv/
+
+# benchmark.csv, results.txt, performance.png и speedup.png хранятся в репозитории,
+# чтобы отчёт с результатами был самодостаточным
