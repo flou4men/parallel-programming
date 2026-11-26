@@ -1,0 +1,3 @@
+# файлы для кластера должны иметь LF, иначе bash пожалуется на ^M
+*.sh  text eol=lf
+*.pbs text eol=lf
